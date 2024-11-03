@@ -9,8 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
 </head>
 <body>
-    <div class="left-container">
-      <div class="logo-container">
+    <div>
+      <div class="logo-container" style="display: flex; justify-content: center; align-items: center;">
         <img
           src="{{ url_for('static', filename='Logo.png') }}"
           width="400"
@@ -18,7 +18,7 @@
         />
       </div>
       <!-- Video feed will be inserted here after login -->
-    <div id="video-container" style="display:none;">
+    <div id="video-container" style="display: none; text-align: center;">
       <img id="video-feed" width="640" height="480" alt="Video feed" />
   </div>
       <div>
@@ -33,8 +33,6 @@
       </div>
     </div>
     
-
-
       <!-- Login Button -->
     <button id="login-btn">Log in with Spotify</button>
 
