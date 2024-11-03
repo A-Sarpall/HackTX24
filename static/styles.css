@@ -11,8 +11,13 @@ body {
 }
 
 h1 {
-    color: #438f01;
+    color: #1fc457;
     margin-top: 20px;
+}
+
+h3 {
+    color: #1fc457;
+    margin-top: 12px;
 }
 
 img {
