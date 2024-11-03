@@ -7,6 +7,7 @@ from flask import Flask, request, redirect
 import urllib.parse
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+import random
 
 # Load Spotify variables
 load_dotenv('client.env')
@@ -82,6 +83,25 @@ def queue_track(uri):
         print(f"added {uri} to queue")
     except spotipy.exceptions.SpotifyException as e:
         print("Error:", e)
+
+def add_playlist_to_queue(playlist_uri):
+    try:
+        # Get tracks from the playlist
+        results = sp.playlist_tracks(playlist_uri)
+        tracks = results['items']
+
+        random.shuffle(tracks)
+        
+        # Queue each track from the playlist
+        for item in tracks:
+            track_uri = item['track']['uri']  # Extract track URI
+            queue_track(track_uri)  # Queue the track
+            
+    except spotipy.exceptions.SpotifyException as e:
+        print("Error adding playlist to queue:", e)
+
+def queue_length():
+    return len(sp.queue())
 
 #def recommend():
 #    sp.recommendations(seed_artists=sp.currently_playing, seed_genres=None, seed_tracks=None, limit=20, country=None, **kwargs)
