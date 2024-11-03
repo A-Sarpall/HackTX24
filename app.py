@@ -14,7 +14,6 @@ API_KEY = os.getenv("API_KEY")
 genai.configure(api_key=os.environ["API_KEY"])
 model = genai.GenerativeModel("gemini-1.5-flash")
 app = Flask(__name__)
-URI = ['spotify:track:0VjIjW4GlUZAMYd2vXMi3b', 'spotify:track:79chzfFIIq7cHkqcYYORk0']
 evalue = 0
 socketio = SocketIO(app)
 currentSong = 0
@@ -38,6 +37,7 @@ def generate_frames():
         None: 0
     }
     compareTime = time.time()
+
 
     while True:
         ret, frame = cap.read()
@@ -63,6 +63,7 @@ def generate_frames():
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
         
         # Happy, sad, anger, fear, surprise, neutral
+
         if emotion != None:
             emotionalvalue += emotiondict[emotion]
             total += 1
@@ -77,6 +78,7 @@ def generate_frames():
                         compareTime = time.time()
                         total = 1
                         emotionalvalue = 1
+                        
 
     cap.release()
 
@@ -118,12 +120,11 @@ def updateSong(avg):
     global currentSong  # Add this to access the global variable
     if avg < 0:
         # Make sure we don't go out of bounds of the URI list
-        if currentSong < len(URI) - 1:
+        if currentSong == 0:
+            add_playlist_to_queue("spotify:playlist:37i9dQZEVXbLp5XoPON0wI")
+        if currentSong < queue_length() - 1:
             currentSong += 1
-        else:
-            currentSong = 0  # Loop back to the beginning if we're at the end
-        print(f"Attempting to play URI: {URI[currentSong]}")
-        queue_track(URI[currentSong])
+        print(queue_length())
         skip_track()
         # Emit the URI as a string in a proper data structure
         
