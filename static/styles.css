@@ -1,10 +1,10 @@
 /* static/styles.css */
-
 body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     background-color: #000;
     margin: 0;
     padding: 0;
@@ -19,6 +19,40 @@ h3 {
     color: #1fc457;
     margin-top: 12px;
 }
+
+h1, h3 {
+    text-align: center;
+  }
+
+#trending {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40vw;
+    height: 40vh;
+    background-color: rgba(25, 20, 20, 1);
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+  }
+
+  #trending h4 {
+    text-align: center; 
+    color: white;
+  }
+
+  #song-artist-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Space between title and columns */
+  }
+
+  .column {
+    flex: 1; /* Each column takes equal space */
+    text-align: center; /* Center text in columns */
+  }
+
+  
 
 img {
     border: 5px solid #ffffff;
