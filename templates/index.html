@@ -10,14 +10,23 @@
     />
   </head>
   <body>
-    <h1>MoodSing</h1>
-    <h3>Real-time Vibe Detection</h3>
-    <img
-      src="{{ url_for('video_feed') }}"
-      width="200"
-      height="300"
-      alt="Video feed"
-    />
+    <div class="left-container">
+      <div class="logo-container">
+        <img
+          src="{{ url_for('static', filename='Logo.png') }}"
+          width="400"
+          height="150"
+        />
+      </div>
+      <div class="video-feed-container">
+        <img
+          src="{{ url_for('video_feed') }}"
+          width="750"
+          height="345"
+          alt="Video feed"
+        />
+      </div>
+    </div>
 
     <div id="trending">
       <h4>Trending Now</h4>
@@ -25,21 +34,81 @@
         <div class="column">
           <h5>Songs</h5>
           <ul>
-            <li>Song Title 1</li>
-            <li>Song Title 2</li>
-            <li>Song Title 3</li>
-            <li>Song Title 4</li>
-            <li>Song Title 5</li>
+            <li>
+              <img
+                src="{{ url_for('static', filename='Images/Starboy.png') }}"
+                alt="Song Icon"
+              />
+              StarBoy
+            </li>
+            <li>
+              <img
+                src="{{ url_for('static', filename='Images/Utopia.png') }}"
+                alt="Song Icon"
+              />
+              Telekinesis
+            </li>
+            <li>
+              <img
+                src="{{ url_for('static', filename='Images/Love Sick.png') }}"
+                alt="Song Icon"
+              />
+              Private Landing
+            </li>
+            <li>
+              <img
+                src="{{ url_for('static', filename='Images/Thriller.png') }}"
+                alt="Song Icon"
+              />
+              Thriller
+            </li>
+            <li>
+              <img
+                src="{{ url_for('static', filename='Images/The Color Violet.png') }}"
+                alt="Song Icon"
+              />
+              The Color Violet
+            </li>
           </ul>
         </div>
         <div class="column">
           <h5>Artists</h5>
           <ul>
-            <li>Artist Name 1</li>
-            <li>Artist Name 2</li>
-            <li>Artist Name 3</li>
-            <li>Artist Name 4</li>
-            <li>Artist Name 5</li>
+            <li>
+              <img
+                src="{{ url_for('static', filename='Images/The Weekend.png') }}"
+                alt="Artist Icon"
+              />
+              The Weeknd
+            </li>
+            <li>
+              <img
+                src="{{ url_for('static', filename='Images/Drake.png') }}"
+                alt="Artist Icon"
+              />
+              Drake
+            </li>
+            <li>
+              <img
+                src="{{ url_for('static', filename='Images/Travis.png') }}"
+                alt="Artist Icon"
+              />
+              Travis Scott
+            </li>
+            <li>
+              <img
+                src="{{ url_for('static', filename='Images/SZA.png') }}"
+                alt="Artist Icon"
+              />
+              SZA
+            </li>
+            <li>
+              <img
+                src="{{ url_for('static', filename='Images/Lana.png') }}"
+                alt="Artist Icon"
+              />
+              Lana Del Ray
+            </li>
           </ul>
         </div>
       </div>

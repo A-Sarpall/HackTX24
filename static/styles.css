@@ -1,62 +1,103 @@
-/* static/styles.css */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    background-color: #000;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: flex-start;
+  background-color: #000;
+  margin: 0;
+  padding: 20px;
 }
 
-h1 {
-    color: #1fc457;
-    margin-top: 20px;
-}
-
+h1,
 h3 {
-    color: #1fc457;
-    margin-top: 12px;
+  color: #1fc457;
+  text-align: center;
+  margin-top: 20px;
 }
 
-h1, h3 {
-    text-align: center;
-  }
+/* Container for logo and video feed */
+.left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
+}
 
+/* Logo styling */
+.logo-container img {
+  width: 400px;
+  height: 150px;
+}
+
+/* Video feed styling */
+.video-feed-container {
+  border: 5px solid rgba(25, 20, 20, 1);
+  width: 750px;
+  height: 345px;
+  margin-top: 5px;
+  border-radius: 20px;
+}
+
+#video-feed-container img {
+  border-radius: 20px;
+}
+
+/* Trending section on the right */
 #trending {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 40vw;
-    height: 40vh;
-    background-color: rgba(25, 20, 20, 1);
-    padding: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-  }
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40vw;
+  height: 45vh;
+  background-color: rgba(25, 20, 20, 1);
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
 
-  #trending h4 {
-    text-align: center; 
-    color: white;
-  }
+#trending h4 {
+  text-align: center;
+  color: white;
+  font-size: 24px; /* Adjust the font size as desired */
+  text-decoration: underline; /* Underline the text */
+  margin-bottom: 5px; /* Reduced margin to decrease space */
+}
 
-  #song-artist-section {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px; /* Space between title and columns */
-  }
+#trending h5 {
+  color: white;
+  font-size: 16px;
+  margin-top: 3px; /* Reduced margin to decrease space */
+}
 
-  .column {
-    flex: 1; /* Each column takes equal space */
-    text-align: center; /* Center text in columns */
-  }
+/* Center align songs and artists */
+#song-artist-section {
+  display: flex;
+  justify-content: space-around; /* Adjusted for better spacing */
+  margin-top: 5px; /* Reduced margin to decrease space */
+}
 
-  
+.column {
+  flex: 1;
+  color: white;
+  text-align: center;
+}
 
-img {
-    border: 5px solid #ffffff;
-    margin-top: 20px;
-    width: 740px;
-    height: 580px;
+/* Styling for list items */
+#trending ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center; /* Center align the list */
+}
+
+#trending li {
+  color: white;
+  display: flex;
+  justify-content: center; /* Center the content in the list items */
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#trending li img {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
 }
