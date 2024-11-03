@@ -18,7 +18,7 @@ h3 {
 .left-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin-right: 20px;
 }
 
@@ -41,6 +41,32 @@ h3 {
   border-radius: 20px;
 }
 
+/* Graph container styling */
+#graph-container {
+  position: absolute;
+  top: calc(45vh + 40px); /* Position below trending section */
+  right: 20px;
+  width: 40vw;
+  height: 45vh;
+  background-color: rgba(25, 20, 20, 1);
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+#graph-container h4 {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+
+#emotionGraph {
+  width: 100% !important;
+  height: calc(100% - 50px) !important; /* Subtract header height */
+}
+
 /* Trending section on the right */
 #trending {
   position: absolute;
@@ -57,47 +83,105 @@ h3 {
 #trending h4 {
   text-align: center;
   color: white;
-  font-size: 24px; /* Adjust the font size as desired */
-  text-decoration: underline; /* Underline the text */
-  margin-bottom: 5px; /* Reduced margin to decrease space */
+  font-size: 24px;
+  text-decoration: underline;
+  margin-bottom: 5px;
 }
 
 #trending h5 {
   color: white;
   font-size: 16px;
-  margin-top: 3px; /* Reduced margin to decrease space */
+  margin-top: 3px;
+  margin-bottom: 8px;
 }
 
 /* Center align songs and artists */
 #song-artist-section {
   display: flex;
-  justify-content: space-around; /* Adjusted for better spacing */
-  margin-top: 5px; /* Reduced margin to decrease space */
+  justify-content: space-around;
+  margin-top: 5px;
+  height: calc(100% - 80px); /* Adjust container height to account for headers */
 }
 
 .column {
   flex: 1;
   color: white;
   text-align: center;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Styling for list items */
 #trending ul {
   list-style-type: none;
   padding: 0;
-  text-align: center; /* Center align the list */
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+  overflow-y: auto; /* Enable scrolling if content overflows */
 }
 
 #trending li {
   color: white;
   display: flex;
-  justify-content: center; /* Center the content in the list items */
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 8px;
+  padding: 4px 8px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+#trending li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
 #trending li img {
   width: 30px;
   height: 30px;
   margin-right: 8px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* Login button styling */
+#login-btn {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #1fc457;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+#login-btn:hover {
+  background-color: #1aa548;
+}
+
+/* Player controls styling */
+#player-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+}
+
+#current-track {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+#status-message {
+  color: #1fc457;
+  font-size: 12px;
 }
