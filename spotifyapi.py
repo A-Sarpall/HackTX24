@@ -9,7 +9,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 # Load Spotify variables
-load_dotenv()
+load_dotenv('client.env')
 client_id = os.getenv("CLIENT_ID")
 client_secret = os.getenv("CLIENT_SECRET")
 redirect_uri = "http://localhost:8888/callback"
@@ -75,6 +75,16 @@ def pause_track():
             print("Resumed the current song.")
     except spotipy.exceptions.SpotifyException as e:
         print("Error:", e)
+
+def queue_track(uri):
+    try:
+        sp.add_to_queue(uri)
+        print(f"added {uri} to queue")
+    except spotipy.exceptions.SpotifyException as e:
+        print("Error:", e)
+
+#def recommend():
+#    sp.recommendations(seed_artists=sp.currently_playing, seed_genres=None, seed_tracks=None, limit=20, country=None, **kwargs)
 
 @app.route("/")
 def authorize():
